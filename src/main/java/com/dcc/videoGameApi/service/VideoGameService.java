@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Transactional
 @Service
@@ -21,4 +20,6 @@ public class VideoGameService {
     }
 
 
+    public List<VideoGame> getAllVideoGames() { return videoGameRepository.findAll();}
+    public VideoGame getByID(Integer id) { return videoGameRepository.findById(id).orElse(null);}
 }
